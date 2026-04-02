@@ -1,6 +1,5 @@
 package com.WebScrapping.Controller;
 
-
 import com.WebScrapping.Service.ScraperService;
 import com.WebScrapping.model.ScrapeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-public class ScrapeController {
-
+public class ScrapeController
+{
     @Autowired
     private ScraperService scraperService;
 
     @GetMapping("/api/scrape")
-    public ScrapeResponse scrape(@RequestParam String url) throws IOException {
+    public ScrapeResponse scrape(@RequestParam String url) throws IOException
+    {
         return scraperService.webScrape(url);
     }
 }
